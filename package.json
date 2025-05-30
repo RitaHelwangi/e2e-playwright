@@ -2,7 +2,10 @@
   "name": "e2e-playwright",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test-e2e": "playwright test",
+    "test-e2e-ui": "playwright test uni"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -1,0 +1,3 @@
+- Som användare vill jag kunna navigera mellan katalog, lägga till bok och mina böcker.
+- Som användare vill jag kunna lägga till en ny bok till min läslista.
+- Som användare vill jag kunna se mina favoritmarkerade böcker.
