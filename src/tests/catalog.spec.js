@@ -24,4 +24,30 @@ test.describe("Katalog-vy", () => {
       )
     ).toBeVisible();
   });
+
+  test("Favoritmarkerar två böcker och ser dem i Mina böcker", async ({
+    page,
+  }) => {
+    // Favoritmarkera första boken
+    await page
+      .getByTestId(
+        "star-Att prata med växter – och vad de egentligen tycker om dig"
+      )
+      .click();
+    // Favoritmarkera andra boken
+    await page
+      .getByTestId("star-Hur man tappar bort sin TV-fjärr 10 gånger om dagen")
+      .click();
+    // Gå till Mina böcker
+    await page.getByRole("button", { name: "Mina böcker" }).click();
+    // Kontrollera att båda böckerna nu finns i Mina böcker
+    await expect(
+      page.getByText(
+        "Att prata med växter – och vad de egentligen tycker om dig"
+      )
+    ).toBeVisible();
+    await expect(
+      page.getByText("Hur man tappar bort sin TV-fjärr 10 gånger om dagen")
+    ).toBeVisible();
+  });
 });
