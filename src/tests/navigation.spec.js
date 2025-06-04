@@ -22,4 +22,17 @@ test.describe("Navigering mellan vyer", () => {
     await page.getByRole("button", { name: "Mina böcker" }).click();
     await expect(page.getByText(/Dina favoriter/i)).toBeVisible();
   });
+
+  test("Navigerar från Mina böcker till Katalog och vidare till Lägg till bok visar rätt innehåll", async ({
+    page,
+  }) => {
+    await page.getByRole("button", { name: "Mina böcker" }).click();
+    await expect(page.getByText(/Dina favoriter/i)).toBeVisible();
+
+    await page.getByRole("button", { name: "Katalog" }).click();
+    await expect(page.getByText("Flora Tistel")).toBeVisible();
+
+    await page.getByRole("button", { name: "Lägg till bok" }).click();
+    await expect(page.getByTestId("add-input-author")).toBeVisible();
+  });
 });
