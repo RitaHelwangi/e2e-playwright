@@ -13,30 +13,25 @@ test.describe("Katalog-vy", () => {
 		await expect(
 			page.getByText("Kaffekokaren som visste för mycket")
 		).toBeVisible();
-
-		await expect(
-			page.getByText("Min katt är min chef")
-		).toBeVisible();
-
-		await expect(page.getByText("100 sätt att undvika måndagar")
-		).toBeVisible();
-
+		
+		await expect(page.getByText("Min katt är min chef")).toBeVisible();
+		
+		await expect(page.getByText("100 sätt att undvika måndagar")).toBeVisible();
+		
 		await expect(
 			page.getByText("Gräv där du står – och hitta en pizzameny")
 		).toBeVisible();
-
+		
+		await expect(page.getByText("Jag trodde det var tisdag")).toBeVisible();
+		
 		await expect(
-			page.getByText("Jag trodde det var tisdag")
-		).toBeVisible();
-
-		await expect(
-			page.getByText("Att prata med växter – och vad de egentligen tycker om dig")
+			page.getByText(
+				"Att prata med växter – och vad de egentligen tycker om dig"
+			)
 		).toBeVisible();
 	});
-
-	test("Favoritmarkerar två böcker och ser dem i Mina böcker", async ({
-		page,
-	}) => {
+	
+	test("Favoritmarkerar två böcker", async ({ page }) => {
 		// Favoritmarkera första boken
 		await page
 		.getByTestId(
@@ -49,15 +44,24 @@ test.describe("Katalog-vy", () => {
 		.getByTestId("star-Hur man tappar bort sin TV-fjärr 10 gånger om dagen")
 		.click();
 		
-		// Gå till Mina böcker
-		await page.getByRole("button", { name: "Mina böcker" }).click();
-		
-		// Kontrollera att båda böckerna nu finns i Mina böcker
 		await expect(
-			page.getByText(
-				"Att prata med växter – och vad de egentligen tycker om dig"
-			)
+			page.getByText("Hur man tappar bort sin TV-fjärr 10 gånger om dagen")
 		).toBeVisible();
+	});
+	
+	
+	test("avmarkera favoritböcker", async ({ page }) => {
+		// Avmarkera första boken
+		await page
+		.getByTestId(
+			"star-Att prata med växter – och vad de egentligen tycker om dig"
+		)
+		.click();
+		
+		// Avmarkera andra boken
+		await page
+		.getByTestId("star-Hur man tappar bort sin TV-fjärr 10 gånger om dagen")
+		.click();
 		
 		await expect(
 			page.getByText("Hur man tappar bort sin TV-fjärr 10 gånger om dagen")

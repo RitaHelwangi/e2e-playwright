@@ -10,11 +10,8 @@
 ## 📚 Katalog-vy
 
 - Som användare vill jag kunna se en lista med tillgängliga böcker i katalogen så att jag kan välja vilka böcker jag vill läsa.
-- Som användare vill jag kunna favoritmarkera en bok i katalogen så att den läggs till i Mina böcker.
-- Som användare vill jag kunna favoritmarkera flera böcker till i katalogen så att jag kan skapa en personlig läslista.
-- Som en användare vill jag kunna avmarkera en bok i katalogen så att den tas bort från Mina böcker.
-- Som en användare vill jag kunna avmarkera flera bcöcker i katalogen så att dem tas bort från Mina böcker.
-- Som användare vill jag att en ny bok jag har lagt till visas direkt i katalogen så att jag ser att det fungerade.
+- Som användare vill jag kunna favoritmarkera böcker i katalogen så att den läggs till i Mina böcker.
+- Som en användare vill jag kunna avmarkera böcker i katalogen så att den tas bort från Mina böcker.
 
 ---
 
