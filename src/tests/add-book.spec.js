@@ -10,4 +10,13 @@ test.describe("Lägga till bok-vy", () => {
     await expect(page.getByTestId("add-input-title")).toBeVisible();
     await expect(page.getByTestId("add-input-author")).toBeVisible();
   });
+
+  test("lägga till en ny bok och se den i katalogen", async ({ page }) => {
+    await page.getByRole("button", { name: "Lägg till bok" }).click();
+    await page.getByTestId("add-input-title").fill("Testbok");
+    await page.getByTestId("add-input-author").fill("Testförfattare");
+    await page.getByTestId("add-submit").click();
+    await page.getByRole("button", { name: "Katalog" }).click();
+    await expect(page.getByText("Testbok")).toBeVisible();
+  });
 });
