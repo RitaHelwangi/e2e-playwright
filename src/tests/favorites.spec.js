@@ -6,14 +6,14 @@ test.describe("Mina böcker-vy", () => {
 		await page.getByRole("button", { name: "Mina böcker" }).click();
 	});
 	
-	test("kan markera en bok som favorit", async ({ page }) => {
-		await page.goto("https://tap-ht24-testverktyg.github.io/exam-template/");
-		await page.getByTestId("star-Kaffekokaren som visste för mycket").click();
-		
-		await expect(
-			page.getByTestId(
-				"star-Kaffekokaren som visste för mycket"
-			)
-		).toBeVisible();
-	});
+	test("visar en lista över mina favoritmarkerade böcker", async ({ page }) => {
+    await page.goto("https://tap-ht24-testverktyg.github.io/exam-template/");
+    await page.getByTestId("star-Kaffekokaren som visste för mycket").click();
+    await page.getByRole("button", { name: "Mina böcker" }).click();
+
+    await expect(
+      page.getByText("Kaffekokaren som visste för mycket")
+    ).toBeVisible();
+  });
+
 });

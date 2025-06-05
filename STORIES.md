@@ -1,4 +1,3 @@
-
 # 📘 User Stories – Läslistan
 
 ## 🧭 Navigation
@@ -28,6 +27,5 @@
 
 ## 📖 Mina böcker-vy
 
-- Som användare vill jag kunna lägga till flera olika böcker till Mina böcker så att jag kan skapa en personlig läslista.
-- Som användare vill jag kunna se en lista över mina favoritmarkerade böcker så att jag enkelt hittar dem jag vill läsa.
-- Som användare vill jag kunna ta böcker från Mina böcker så att jag kan ångra mig om jag inte längre vill läsa dem.
+* Som användare vill jag kunna se en lista över mina favoritmarkerade böcker så att jag enkelt hittar de böcker jag vill läsa.
+* Som användare vill jag kunna se när min favoritlista är tom så att jag vet att inga böcker är markerade som favoriter.
